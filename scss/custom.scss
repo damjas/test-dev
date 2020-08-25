@@ -1,0 +1,129 @@
+@import '_variables';
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F2F2F2;
+}
+h1{
+   font-size: 28px;
+   line-height: 1.2;
+   font-weight: bold; 
+   margin: 0;
+}
+h2{
+    color: #111111;
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+}
+p{
+    font-size: 16px;
+    line-height: 1.5;
+    padding-top: 13px;
+}
+.container{
+    max-width: 1440px;
+    margin: 100px auto; //100 tylko wizualnie 
+    background-color: #fff;
+    display: flex;
+    @media (max-width: $brk-tablet) {
+        flex-wrap: wrap;
+    }
+    .box{
+        width: 100%;
+        font-family: $primary-font;
+        color: #000;
+        &.text-box{
+            padding: 53px 0px 63px 161px;
+            width: 100%;
+            @media (max-width: $brk-desktop) {
+                padding: 53px 0px 63px 20px;
+            }
+            @media (max-width: $brk-tablet) {
+                padding: 50px 25px 20px;
+            }
+            @media (max-width: $brk-mobile) {
+                padding: 50px 15px 20px;
+            }
+            .content{
+                max-width: 445px; 
+                padding-right: 50px;
+                @media (max-width: $brk-tablet) {
+                    max-width: 100%;
+                    padding-right: 0;
+                }
+                .description{
+                    max-width: 190px;
+                    text-align: center;
+                    margin: 0 auto;
+                    padding-top: 42px;
+                    p{
+                        font-size: 14px;
+                        margin: 0;
+                        line-height: 1.45;
+                        padding-top: 15px;
+                    }
+                }
+            }
+        }
+        &.carousel-box{
+            padding: 35px 165px 30px 0;
+            display: flex;
+            @media (max-width: $brk-desktop) {
+                padding: 35px 20px 30px 0;
+            }
+            @media (max-width: $brk-tablet) {
+                padding: 30px 25px 20px;
+            }
+            @media (max-width: $brk-mobile) {
+                padding: 30px 15px 20px;
+            }
+            /****zdjęcie**/
+                img{
+                    max-width: 555px;
+                    width: 100%;
+                    min-height: 400px;
+                    object-fit: cover;
+                    @media (max-width: $brk-tablet) {
+                        margin: 0 auto;
+                        max-width: 100%;
+                        min-height: 300px; //auto
+                    }
+                }       
+                /*******/
+            
+            //karuzela 
+            .slider {
+                max-width: 555px;
+                width: 100%;
+                margin: 0 auto 20px;
+                text-align: center;
+                .photos {
+                    position: relative;
+                    height: 400px;
+                    @media (max-width: $brk-tablet) {
+                        height: 350px;
+                    }
+                    @media (max-width: $brk-mobile) {
+                        height: 300px;
+                    }
+                    img {
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity 1s;
+                    }
+                    img.shown {
+                        opacity: 1;
+                    }
+                }
+            }           
+            
+        }
+        
+    }
+}
